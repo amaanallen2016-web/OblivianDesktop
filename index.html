@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>OblivianOS</title>
+  <meta name="description" content="OblivianOS — cinematic web desktop. All of the code I made it.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Orbitron:wght@500;600&family=Rajdhani:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/os.css">
+</head>
+<body>
+  <section id="boot">
+    <div class="boot-inner">
+      <p class="kicker">CINE HUB</p>
+      <h1 class="logo">OBLIVIAN</h1>
+      <p class="credit">All of the code I made it.</p>
+      <div class="scan"></div>
+      <ul class="logs" id="boot-logs"></ul>
+      <div class="pick" id="boot-pick" hidden>
+        <button class="flavor" id="pick-linux"><b>Linux</b><span>GNOME · Oblivian dash</span></button>
+        <button class="flavor" id="pick-os"><b>OS</b><span>Menu bar · Dock</span></button>
+      </div>
+    </div>
+  </section>
+
+  <div id="desktop">
+    <div id="wall"><canvas id="wall-canvas"></canvas></div>
+    <header id="hud">
+      <div style="display:flex;gap:14px;align-items:center">
+        <span class="brand">OBLIVIAN</span>
+        <nav class="menus" id="hud-menus">
+          <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Window</span>
+        </nav>
+        <span class="muted" id="linux-status" hidden>Activities</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="btn ghost" id="spot-btn" style="height:26px;padding:0 10px;font-size:11px">Search</button>
+        <span id="clock"></span>
+      </div>
+    </header>
+    <div id="icons"></div>
+    <div id="wins"></div>
+    <nav id="dock" aria-label="Dock"></nav>
+    <div id="spot">
+      <div class="spot-box">
+        <input id="spot-input" placeholder="Open app or game" autocomplete="off">
+        <div class="spot-hits" id="spot-hits"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="js/games.js"></script>
+  <script src="js/pulse.js"></script>
+  <script src="js/apps.js"></script>
+  <script src="js/os.js"></script>
+</body>
+</html>
